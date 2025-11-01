@@ -1,0 +1,124 @@
+/* Основные стили, адаптированные под ТГ */
+body {
+    background-color: var(--tg-theme-bg-color, #f0f0f0);
+    color: var(--tg-theme-text-color, #000000);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s; /* Плавная смена темы */
+}
+
+#app-container {
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    /* Добавьте сюда логику смены аватара и темы */
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* --- Экраны --- */
+.screen {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(10px);
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Выбор Языка --- */
+.lang-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.lang-selector button {
+    background-color: var(--tg-theme-button-color, #50a8eb);
+    color: var(--tg-theme-button-text-color, #ffffff);
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.lang-selector button:active {
+    transform: scale(0.98);
+}
+
+/* --- Кнопки Этапов (Phase List) --- */
+.phase-list {
+    display: grid;
+    gap: 15px;
+}
+
+.phase-card {
+    background-color: var(--tg-theme-secondary-bg-color, #ffffff);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.phase-card.active-vote {
+    background-color: var(--tg-theme-link-color, #2481cc20); /* Легкий акцент для активного */
+    border: 1px solid var(--tg-theme-link-color, #2481cc);
+}
+
+.phase-card.inactive-vote {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.phase-card h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: var(--tg-theme-text-color);
+}
+
+.phase-status {
+    font-size: 14px;
+    color: var(--tg-theme-hint-color, #8e8e93);
+}
+
+/* --- Список Стран (Countries List) --- */
+.country-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: var(--tg-theme-secondary-bg-color, #ffffff);
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.country-item.selected {
+    background-color: var(--tg-theme-link-color, #2481cc1a); /* Акцент при выборе */
+    border: 2px solid var(--tg-theme-link-color);
+}

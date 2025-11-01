@@ -1,0 +1,6 @@
+pytelegrambotapi
+Flask
+Flask-CORS
+SQLAlchemy
+gunicorn
+psycopg2-binary
